@@ -1,0 +1,7 @@
+models/*.gguf
+frames/*
+exports/*
+gifs/*
+video/*
+vision.cpp/
+__pycache__/
