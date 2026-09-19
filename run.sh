@@ -16,19 +16,19 @@ mkdir -p video frames exports gif models
 
 printf '%s\n' '[1/3] Extracting video frames at 30 FPS...'
 if ! sh "$SCRIPT_DIR/export_frames.sh" "$VIDEO"; then
-	printf '%s\n' 'Pipeline stopped during frame extraction. Fix the message above, then run ./run.sh again.' >&2
+	printf '%s\n' 'Pipeline stopped during frame extraction.' >&2
 	exit 1
 fi
 
 printf '%s\n' '[2/3] Removing backgrounds...'
 if ! "$PYTHON" "$SCRIPT_DIR/main.py"; then
-	printf '%s\n' 'Pipeline stopped during background removal. Fix the message above, then run ./run.sh again.' >&2
+	printf '%s\n' 'Pipeline stopped during background removal.' >&2
 	exit 1
 fi
 
 printf '%s\n' '[3/3] Creating transparent GIF...'
 if ! sh "$SCRIPT_DIR/frames_to_gif.sh"; then
-	printf '%s\n' 'Pipeline stopped during GIF creation. Fix the message above, then run ./run.sh again.' >&2
+	printf '%s\n' 'Pipeline stopped during GIF creation.' >&2
 	exit 1
 fi
 

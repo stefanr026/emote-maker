@@ -1,11 +1,12 @@
 from __future__ import annotations
+from pathlib import Path
 
 import os
 import shutil
 import subprocess
 import sys
 import threading
-from pathlib import Path
+
 
 ROOT = Path(__file__).resolve().parent
 DEFAULT_INPUT = ROOT / "frames"
